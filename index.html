@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Valley Nursery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Bloom Valley Nursery Logo" class="logo"> <!-- Logo -->
+        <h1>Welcome to Bloom Valley Nursery</h1>
+        <p>Your local, family-owned plant nursery.</p>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About Us</a>
+            <a href="#history">History of Gardening</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>About Us</h2>
+        <p>At Bloom Valley Nursery, we specialize in a wide variety of plants, trees, and gardening supplies.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="plant-list">
+            <div class="plant-item">
+                <h3>Aloe Vera</h3>
+                <img src="images/aloe_vera.png" alt="Aloe Vera Plant">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Apple Tree</h3>
+                <img src="images/apple_tree.png" alt="Apple Tree">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Birch Tree</h3>
+                <img src="images/birch_tree.png" alt="Birch Tree">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Birdhouse</h3>
+                <img src="images/birdhouse.png" alt="Birdhouse">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Maple Tree</h3>
+                <img src="images/maple_tree.png" alt="Maple Tree">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Potting Soil</h3>
+                <img src="images/potting_soil.png" alt="Potting Soil">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Spider Plant</h3>
+                <img src="images/spider_plant.png" alt="Spider Plant">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>String of Pearls</h3>
+                <img src="images/string_of_pearls.png" alt="String of Pearls">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <h3>Watering Can</h3>
+                <img src="images/watering_can.png" alt="Watering Can">
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="process-order">Process Order</button>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Bloom Valley Nursery is a local, family-owned plant nursery dedicated to connecting with gardening enthusiasts and homeowners.</p>
+        <p>We offer a wide variety of plants, trees, and gardening supplies.</p>
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:info@bloomvalleynursery.com">info@bloomvalleynursery.com</a></p>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="history">
+        <h2>History of Gardening</h2>
+        <p>Gardening dates back thousands of years and is one of the oldest human activities.</p>
+        <p>From ancient civilizations growing crops for sustenance to modern-day gardening as a hobby and art form, the love for plants and nature has shaped cultures around the world.</p>
+        <p>As we become more aware of environmental issues, gardening has also evolved into a means of promoting sustainability and biodiversity.</p>
+    </section>
+
+    <footer>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About Us</a>
+            <a href="#history">History of Gardening</a>
+        </nav>
+        <h3>Hours of Operation</h3>
+        <p>Monday–Friday: 9 a.m. to 6 p.m.</p>
+        <p>Saturday–Sunday: 10 a.m. to 5 p.m.</p>
+        <p>Contact us at: <a href="mailto:info@bloomvalleynursery.com">info@bloomvalleynursery.com</a></p>
+        <button class="subscribe-button">Subscribe</button>
+    </footer>
+
+    <script>
+        // JavaScript functionality
+        // Subscribe button alert functionality
+        document.querySelector('.subscribe-button').addEventListener('click', function() {
+            alert('Thank you for subscribing');
+        });
+
+        // Add to Cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        let cart = [];
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const itemName = this.previousElementSibling.previousElementSibling.textContent;
+                cart.push(itemName);
+                alert('Item added to the cart');
+            });
+        });
+
+        // Clear Cart functionality
+        document.getElementById('clear-cart').addEventListener('click', function() {
+            if (cart.length > 0) {
+                cart = [];
+                alert('Cart cleared');
+            } else {
+                alert('No items to clear');
+            }
+        });
+
+        // Process Order functionality
+        document.getElementById('process-order').addEventListener('click', function() {
+            if (cart.length > 0) {
+                alert('Thank you for your order');
+                cart = [];
+            } else {
+                alert('Cart is empty');
+            }
+        });
+
+        // Contact form submission alert
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
