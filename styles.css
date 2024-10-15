@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F7F7; /* Cloudy Gray */
+    color: #014038; /* Canopy Green */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #014038; /* Canopy Green */
+    color: #F7F7F7; /* Cloudy Gray */
+    text-align: center;
+    padding: 2em 0;
+}
+
+.logo {
+    max-width: 200px; /* Adjust as necessary */
+    margin: 20px auto;
+    display: block; /* Center the logo */
+}
+
+.navbar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a {
+    color: #F0C06D; /* Sunlit Petal */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 20px; /* Increase padding for larger clickable area */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for better visibility */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #F0C06D; /* Sunlit Petal on hover */
+    color: #014038; /* Canopy Green text on hover */
+}
+
+section {
+    padding: 2em;
+    border-bottom: 1px solid #96BAA0; /* Meadow Mist */
+}
+
+.plant-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.plant-item {
+    background-color: #96BAA0; /* Meadow Mist */
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px; /* Fixed width for plant items */
+}
+
+.plant-item img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+footer {
+    background-color: #014038; /* Canopy Green */
+    color: #F7F7F7; /* Cloudy Gray */
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer .navbar {
+    margin: 20px 0;
+}
