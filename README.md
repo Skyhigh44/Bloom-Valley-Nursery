@@ -1,1 +1,1 @@
-Website created for a web develoopment class.
+Website created for a web development class.
